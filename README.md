@@ -1,5 +1,7 @@
 # Roblox Loadstring Generator
 
+**Live app:** https://communitypokeorg.github.io/roblox-loadstring-generator/
+
 Paste a link to a `.lua` script, get a clean one-line snippet for your Roblox
 executor:
 
