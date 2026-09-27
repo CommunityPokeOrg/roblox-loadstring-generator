@@ -1,0 +1,19 @@
+{
+  "name": "roblox-loadstring-generator",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Paste a script URL, get a clean one-line Roblox executor loadstring snippet",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}

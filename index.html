@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Turn a script URL into a clean one-line Roblox executor loadstring snippet." />
+    <title>Loadstring Generator</title>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div class="badge">Roblox</div>
+        <h1>Loadstring Generator</h1>
+        <p class="tagline">
+          Paste a link to a <code>.lua</code> script and get a clean, copy-ready
+          <code>loadstring</code> snippet for your executor.
+        </p>
+      </header>
+
+      <section class="card" aria-label="Generator">
+        <label class="field-label" for="url-input">Script URL</label>
+        <div class="input-row">
+          <input
+            id="url-input"
+            type="url"
+            inputmode="url"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="https://example.com/script.lua"
+            aria-describedby="url-error"
+          />
+        </div>
+        <p id="url-error" class="error" role="alert" hidden></p>
+        <p class="hint">Only http:// and https:// links are accepted. The URL is never fetched or executed.</p>
+
+        <label class="field-label" for="snippet-output">Your snippet</label>
+        <div class="output-row">
+          <code id="snippet-output" class="output empty" aria-live="polite">loadstring(game:HttpGet(&quot;…&quot;))()</code>
+          <button id="copy-btn" type="button" disabled>
+            <span class="copy-label">Copy</span>
+          </button>
+        </div>
+
+        <ul class="notes">
+          <li>Quotes and special characters are escaped so they can't break the Lua string.</li>
+          <li>Nothing is downloaded or run here — the snippet only runs in your executor.</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <span>Paste URL &rarr; copy snippet &rarr; run in your executor.</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
